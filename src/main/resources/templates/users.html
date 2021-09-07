@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+	<H1>EPIC TASK</H1>
+	
+	<h3>Login</h3>
+	<form action="">
+		<div>
+			<label for="email">E-mail</label>
+			<input name="email" id="email">
+		</div>
+		
+		<div>
+			<label for="password">Senha</label>
+			<input type="password"	name="password" id="password">	
+		</div>
+		
+		<div>
+			<button>Entrar</button>
+		</div>
+	</form>
+	
+	<button><a target="_blank" href="/user/new">Registre-se</a></button>
+	
+	
+	<H2>Usuarios</H2>
+				
+	<ul th:each="user : ${users}">
+		<li>
+			<p  th:text="${user.name}"></p>
+			<p  th:text="${user.email}"></p>
+			<p  th:text="${user.password}"></p>	
+		</li>
+	</ul>
+		
+</body>
+</html>
